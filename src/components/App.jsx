@@ -14,7 +14,8 @@ const App = (props) => {
         />
         <ul>
           {arrItems.map(item => (
-            item.active ? item.text : null
+            item.active && item.text ? <li key={item.id}>{item.text}</li>
+            : null
           ))}
         </ul>
       </div>
@@ -26,11 +27,11 @@ const App = (props) => {
 App.propTypes = {
   menuVisibility: PropTypes.bool.isRequired,
   toggleMenu: PropTypes.func.isRequired,
-  arrItems: PropTypes.shape({
+  arrItems: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     active: PropTypes.bool.isRequired,
     text: PropTypes.string,
-  }).isRequired,
+  })).isRequired,
 };
 
 export default App;

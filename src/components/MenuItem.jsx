@@ -29,15 +29,19 @@ class MenuItem extends Component {
 
     return (
       <div className={`menuItem ${itemClassName}`}>
-        Item #{index}
-        <textarea onChange={this.handleChange} value={this.state.value}></textarea>
+        <p>Item #{index}</p>
+        <textarea
+          onChange={this.handleChange}
+          value={this.state.value}
+          disabled={!this.props.active}
+        />
         <Button
           onClick={() => toggleItem(id)}
           text={buttonText}
         />
       </div>
-    )
+    );
   }
-};
+}
 
 export default MenuItem;
