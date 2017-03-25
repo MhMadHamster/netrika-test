@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 const Button = props => (
   <button
@@ -6,6 +6,16 @@ const Button = props => (
   >
     {props.text}
   </button>
-)
+);
+
+Button.propTypes = {
+  onClick: PropTypes.func,
+  text: PropTypes.string,
+};
+
+Button.defaultProps = {
+  onClick: () => {},
+  text: 'Button',
+};
 
 export default Button;
