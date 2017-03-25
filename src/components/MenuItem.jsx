@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Button from './Button';
 
 class MenuItem extends Component {
@@ -43,5 +43,18 @@ class MenuItem extends Component {
     );
   }
 }
+
+MenuItem.propTypes = {
+  changeItem: PropTypes.func.isRequired,
+  toggleItem: PropTypes.func.isRequired,
+  index: PropTypes.number.isRequired,
+  active: PropTypes.bool.isRequired,
+  id: PropTypes.string.isRequired,
+  text: PropTypes.string,
+};
+
+MenuItem.defaultProps = {
+  text: '',
+};
 
 export default MenuItem;
