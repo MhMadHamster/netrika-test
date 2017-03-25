@@ -3,7 +3,7 @@ import { toggleMenu, addItem, toggleItem, changeItem } from '../actions/actions'
 import App from '../components/App';
 
 const mapStateToProps = state => ({
-  data: state,
+  ...state,
 });
 
 const mapDispatchToProps = dispatch => ({
