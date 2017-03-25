@@ -28,9 +28,7 @@ function mainReducer(state = initialState, action) {
         ],
       };
     case types.CHANGE_ITEM:
-      itemIndex = state.arrItems.findIndex(item =>
-        item.id === action.payload.id
-      );
+      itemIndex = state.arrItems.findIndex(item => item.id === action.payload.id);
       if (itemIndex < 0) return state;
       itemObj = state.arrItems[itemIndex];
       return {
@@ -45,9 +43,7 @@ function mainReducer(state = initialState, action) {
         ],
       };
     case types.TOGGLE_ITEM:
-      itemIndex = state.arrItems.findIndex(item =>
-        item.id === action.itemId
-      );
+      itemIndex = state.arrItems.findIndex(item => item.id === action.itemId);
       if (itemIndex < 0) return state;
       itemObj = state.arrItems[itemIndex];
       return {
