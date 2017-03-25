@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Button from './Button';
 import MenuItem from './MenuItem';
 
-const Menu = (props) => (
+const Menu = props => (
   <div className="menu">
     <ul className="menuList">
       {props.arrItems.map((item, i) => (
@@ -22,5 +22,16 @@ const Menu = (props) => (
     />
   </div>
 );
+
+Menu.propTypes = {
+  arrItems: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    active: PropTypes.bool.isRequired,
+    text: PropTypes.string,
+  })).isRequired,
+  addItem: PropTypes.func.isRequired,
+  toggleItem: PropTypes.func.isRequired,
+  changeItem: PropTypes.func.isRequired,
+};
 
 export default Menu;
